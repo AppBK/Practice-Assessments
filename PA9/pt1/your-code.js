@@ -8,22 +8,42 @@ the HTML or CSS files
 // number 1 on it.
 
 // Your code here
-
+const boxOne = document.getElementById("problem-one");
+boxOne.innerText = '';
+const boxOneButton = document.createElement("button");
+boxOneButton.innerText = "1";
+boxOne.appendChild(boxOneButton);
 
 // Problem Two
 // Select the second square using class names. Change the background color to
 // orange, the text color white, and the border to 5px dashed black.
 
 // Your code here
+const boxTwo = document.querySelector('.two');
+boxTwo.style.color = "white";
+boxTwo.style.backgroundColor = "orange";
+boxTwo.style.border = "5px dashed black";
 
 
 // Problem 3
 // Select all of the squares that have a class of "plus", and double their
-// width. Increase the size of the font as well. 
+// width. Increase the size of the font as well.
 // HINT: Check the CSS file or use your Dev Tools to find the original width and
 // font-size, and then double those sizes.
 
 // Your code here
+const classPlus = document.getElementsByClassName("plus");
+
+let temp;
+for(let div in classPlus) {
+  temp = classPlus[div];
+
+  if (+div >= 0) {
+    // console.log('PRINTING', temp);
+    temp.style.width = "100px";
+    temp.style.fontSize = "60px";
+  }
+}
 
 // Problem 4
 // Select the fourth box. Give it an id of "problem-four". Remove the class of
@@ -31,6 +51,9 @@ the HTML or CSS files
 // different color and shape due to code in the css file.
 
 // Your code here
+const boxFour = document.querySelector(".four");
+boxFour.setAttribute("class", "round four");
+boxFour.id = "problem-four";
 
 // Problem 5
 // Use JavaScript to remove boxes 5, 6, and 7. Can you remove multiple boxes at
@@ -41,3 +64,22 @@ the HTML or CSS files
 // evaluate which one achieves the goal in the best way.
 
 // Your code here
+const classSquare = document.getElementsByClassName("square");
+console.log(classSquare)
+
+let temp2;
+let progress = 0;
+for (let div in classSquare) {
+  temp2 = classSquare[div];
+  console.log(progress++, temp2)
+
+  if (+div >= 0 && temp2) {
+    // console.log('PRINTING', temp);
+    if (temp2.innerText === "5" || temp2.innerText === "6" || temp2.innerText === "7") {
+      temp2.parentNode.removeChild(temp2);
+    }
+  }
+}
+
+const classMinus = document.querySelectorAll('.minus');
+classMinus[0].parentNode.removeChild(classMinus[0]);
