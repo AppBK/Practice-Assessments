@@ -83,3 +83,11 @@ for (let div in classSquare) {
 
 const classMinus = document.querySelectorAll('.minus');
 classMinus[0].parentNode.removeChild(classMinus[0]);
+
+// Tanner's Ways
+
+//1.
+// const p5 = document.querySelectorAll('./minus');
+// p5.forEach(ele => {
+//   ele.remove();
+// })

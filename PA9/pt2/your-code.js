@@ -13,6 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
   buttonBlue.addEventListener("click", () => {
     const circle = document.getElementById("blue-border-circle");
     circle.setAttribute("class", "blue-fill");
+
+    //circle.classList.add("blue-fill");
   });
 
   // P2
@@ -36,6 +38,9 @@ window.addEventListener("DOMContentLoaded", () => {
       const divBanana = document.getElementById("bananas-image-div");
       divBanana.appendChild(imgBanana);
     }
+
+    //Bonus
+
   });
 
   // P4
@@ -82,7 +87,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const buttonCream = document.getElementById("save-ice-cream");
   buttonCream.addEventListener("click", () => {
     if (inputCream.value) {
-      // console.log(inputCream.value);
       localStorage.setItem("favCream", inputCream.value);
       inputCream.value = '';
     }
@@ -105,7 +109,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   buttonApple.addEventListener("click", () => {
     const pApple = document.createElement("p");
-    pApple.innerText = "Apple";
+    // pApple.innerText = "Apple";
+    pApple.innerText = '🍎';
 
     basket.appendChild(pApple);
 
