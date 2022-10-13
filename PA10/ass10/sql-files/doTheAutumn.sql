@@ -1,0 +1,25 @@
+CREATE TABLE department (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(64)
+);
+
+CREATE TABLE tools (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(64),
+    price NUMERIC(6, 2),
+    department_id INTEGER REFERENCES deparment(id) ON DELETE SET NULL
+);
+
+CREATE TABLE customers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name VARCHAR(64) NOT NULL,
+  last_name VARCHAR(64) NOT NULL,
+  phone INTEGER NOT NULL
+);
+
+CREATE TABLE purchases (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  quantity INTEGER,
+  tool_id INTEGER REFERENCES tools(id),
+  customer_id INTEGER REFERENCES customers(id) ON DELETE CASCADE
+);
